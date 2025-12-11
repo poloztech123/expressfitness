@@ -53,6 +53,8 @@ p {
 
 img {
 	max-width: 100%;
+	height: auto;
+	display: block;
 }
 
 input:focus,
@@ -3182,7 +3184,7 @@ ol {
 
 	.about-text {
 		height: auto;
-		padding: 120px 70px 60px 70px;
+		padding: 70px 15px 60px;
 	}
 
 	.class-timetable {
