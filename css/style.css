@@ -3018,6 +3018,104 @@ ol {
 	}
 }
 
+
+.gallery-container {
+	max-width: 1200px;
+	margin: 40px auto;
+	padding: 0 20px;
+}
+
+h1 {
+	text-align: center;
+	color: #333;
+	margin-bottom: 30px;
+}
+
+/* --- Filter Controls Styling --- */
+.filter-controls {
+	text-align: center;
+	margin-bottom: 30px;
+	border-bottom: 2px solid #ddd;
+	padding-bottom: 15px;
+}
+
+.filter-btn {
+	color: #555;
+	border: 1px solid #ccc;
+	padding: 10px 20px;
+	margin: 0 5px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+	border-radius: 5px;
+}
+
+/* Style for the active/selected button */
+.filter-btn:hover {
+	background-color: #e9e9e9;
+}
+
+.filter-btn.active {
+	background-color: #007bff;
+	/* Primary color for active state */
+	color: white;
+	border-color: #007bff;
+	font-weight: bold;
+}
+
+/* --- Gallery Grid Styling (Layout) --- */
+.gallery-grid {
+	display: grid;
+	/* Create a responsive grid: 2 columns on small screens, 3 on larger */
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	/* Space between grid items */
+}
+
+.gallery-item {
+	background-color: white;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	border-radius: 8px;
+	text-align: center;
+	transition: all 0.5s ease-in-out;
+}
+
+.gallery-item img {
+	width: 100%;
+	/* Make images fill the container */
+	height: 200px;
+	/* Consistent height for all images */
+	object-fit: cover;
+	/* Ensures images cover the area without distortion */
+	display: block;
+}
+
+.gallery-item p {
+	padding: 10px;
+	margin: 0;
+	font-size: 14px;
+	color: #333;
+	font-weight: 600;
+}
+
+/* --- Class Toggled by JavaScript to Hide Items --- */
+.gallery-item.hidden {
+	/* To hide items, we can scale them down and make them invisible */
+	opacity: 0;
+	transform: scale(0.8);
+	/* The next two lines are crucial to remove the hidden item from the layout flow */
+	position: absolute;
+	/* Take out of flow */
+	width: 0;
+	/* Collapse width to nothing */
+	height: 0;
+	/* Collapse height to nothing */
+	margin: 0;
+	padding: 0;
+	visibility: hidden;
+}
+
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {

@@ -57,8 +57,8 @@
     });
 
     /*------------------
-		Navigation
-	--------------------*/
+        Navigation
+    --------------------*/
     $(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
@@ -172,3 +172,40 @@
     });
 
 })(jQuery);
+
+
+// filter
+document.addEventListener('DOMContentLoaded', function () {
+    const filterControls = document.querySelector('.filter-controls');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    // 1. Add event listener to the main control container
+    filterControls.addEventListener('click', function (e) {
+        // Ensure the clicked element is one of the filter buttons
+        if (e.target.classList.contains('filter-btn')) {
+            const selectedFilter = e.target.getAttribute('data-filter');
+
+            // 2. Update 'active' class on buttons
+            // Remove 'active' from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add 'active' to the clicked button
+            e.target.classList.add('active');
+
+            // 3. Loop through all gallery items and apply filtering logic
+            galleryItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+
+                // Show All (if selectedFilter is 'all') OR
+                // Show item if its category matches the selected filter
+                if (selectedFilter === 'all' || itemCategory === selectedFilter) {
+                    // Remove the 'hidden' class to make it visible
+                    item.classList.remove('hidden');
+                } else {
+                    // Add the 'hidden' class to hide it
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    });
+});

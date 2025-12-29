@@ -1,11 +1,4 @@
-/*  ---------------------------------------------------
-  Template Name: Gym
-  Description:  Gym Fitness HTML Template
-  Author: Colorlib
-  Author URI: https://colorlib.com
-  Version: 1.0
-  Created: Colorlib
----------------------------------------------------------  */
+
 
 'use strict';
 
@@ -16,7 +9,7 @@
     --------------------*/
     $(window).on('load', function () {
         $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
+        $("#preloder").delay(100).fadeOut("slow");
     });
 
     /*------------------
@@ -57,8 +50,8 @@
     });
 
     /*------------------
-		Navigation
-	--------------------*/
+        Navigation
+    --------------------*/
     $(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
