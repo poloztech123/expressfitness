@@ -494,6 +494,8 @@ ol {
 	-o-transition: all 0.6s ease 0.6s;
 	transition: all 0.6s ease 0.6s;
 	opacity: 1;
+	align-items: center;
+	justify-content: center;
 }
 
 .hs-slider.owl-carousel .owl-nav button {
@@ -3351,6 +3353,8 @@ h1 {
 		font-size: 48px;
 		line-height: normal;
 	}
+
+	.hi-text {}
 
 	.ts_slider.owl-carousel .owl-nav button {
 		left: 0;
